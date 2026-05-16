@@ -1,0 +1,5 @@
+Flask==2.2
+Flask-MySQLdb==0.2
+requests==2.26
+Werkzeug==2.2
+gunicorn

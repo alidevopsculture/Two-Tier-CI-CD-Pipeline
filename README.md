@@ -63,7 +63,7 @@ two-tier-app/
 ---
 
 ### Issue 2 — Dockerfile was using unnecessary multi-stage build
-**What happened:** The Dockerfile had two stages — `base` and `development` — which added complexity for no reason.
+**What happened:** The Dockerfile had two stages — `base` and `production` — which added complexity for no reason.
 
 **The loophole:** Multi-stage builds are useful when you're compiling code (like Go or Java). For a simple Python Flask app, one stage is enough.
 
@@ -138,7 +138,7 @@ def init_db():
 ### Issue 5 — Wrong password in healthcheck
 **What happened:** The healthcheck was using `-prootpassword` but the actual `MYSQL_ROOT_PASSWORD` was set to `example`. So the healthcheck kept failing and Flask never started.
 
-**The loophole:** Copy-paste error — the healthcheck password didn't match the actual MySQL root password.
+**The loophole:** The healthcheck password didn't match the actual MySQL root password.
 
 **Fix:** Updated healthcheck to use the correct password:
 ```yaml
@@ -212,10 +212,10 @@ New version of app is live on EC2 at http://<ec2-ip>:5000
 ## Proof — App Running Live
 
 ### Jenkins Pipeline — Build Successful
-![Jenkins Build Success](Screenshot%202026-05-17%20at%201.06.50%20PM.png)
+![Jenkins Build Success](jenkins-success.png)
 
 ### Flask App — Live on EC2
-![App Running on EC2](Screenshot%202026-05-17%20at%201.07.43%20PM.png)
+![App Running on EC2](app-live.png)
 
 ---
 

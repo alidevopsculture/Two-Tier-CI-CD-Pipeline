@@ -209,6 +209,16 @@ New version of app is live on EC2 at http://<ec2-ip>:5000
 
 ---
 
+## Proof — App Running Live
+
+### Jenkins Pipeline — Build Successful
+![Jenkins Build Success](Screenshot%202026-05-17%20at%201.06.50%20PM.png)
+
+### Flask App — Live on EC2
+![App Running on EC2](Screenshot%202026-05-17%20at%201.07.43%20PM.png)
+
+---
+
 ## How to Run Locally
 
 ```bash
